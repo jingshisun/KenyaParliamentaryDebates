@@ -1,2 +1,2 @@
 # KenyaParliamentaryDebates
-Text Mining &amp; Natural Language Processing
+Research project: Text Mining & Natural Language Processing analysis for Kenya Parliamentary Debates
