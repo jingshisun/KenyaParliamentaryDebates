@@ -11,6 +11,8 @@ import os
 import re
 
 
+###### word count ######
+
 # set directory
 os.chdir("/Users/jingshisun/Desktop/KenyaParliamentaryDebates/1963")
 
