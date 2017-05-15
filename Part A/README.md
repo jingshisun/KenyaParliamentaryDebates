@@ -1,5 +1,5 @@
 # Part A (results are in the output folder)
-# Word count
+# Word Count
 
 Method: use regular expression to extract specific words and count them.
 
