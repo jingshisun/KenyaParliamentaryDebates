@@ -1,0 +1,11 @@
+Count the number of times the following words were mentioned: land, infrastructure, road[s], school[s], hospital[s], disease, corruption, economy, tribe
+
+land	824
+infrastructure	4
+road[s]	403
+school[s]	456
+hospital[s]	178
+disease	44
+corruption	22
+economy	141
+tribe	165
