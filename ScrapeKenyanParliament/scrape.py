@@ -2,6 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 import os
 
+"""
+@author: arian1123
+"""
+
 #class for scraping speeches
 
 class Scraper:
