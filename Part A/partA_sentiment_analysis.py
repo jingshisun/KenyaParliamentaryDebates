@@ -191,7 +191,9 @@ def main():
     # set directory
     os.chdir("/Users/jingshisun/Desktop/KenyaParliamentaryDebates/sentiment")
     # specify the years of the files to calculate
-    years = {1963, 1964, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1977, 1978, 1979, 1980, 1981, 1983, 1985, 1987, 1990, 1992, 1996, 1997, 1998, 1999, 2004, 2008}       
+    years = {1963, 1964, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 
+             1977, 1978, 1979, 1980, 1981, 1983, 1985, 1987, 1990, 1992, 1996, 
+             1997, 1998, 1999, 2004, 2008, 2013, 2014, 2015}       
     # calculate sentiments based on NRC Emotion and Sentiment Lexicons
     emotions(years)
     
