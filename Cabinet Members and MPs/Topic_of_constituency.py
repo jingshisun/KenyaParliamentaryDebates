@@ -56,7 +56,6 @@ def find_topic(raw_text):
 
 def main():
 
-        #import xlrd
     os.chdir("/Users/jingshisun/Desktop/KenyaParliamentaryDebates/sentiment")
     df = pd.read_excel("../Cabinet Members and MPs/constituency.xlsx")
     # specify the years 
