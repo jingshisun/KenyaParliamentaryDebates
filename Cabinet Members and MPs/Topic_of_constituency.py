@@ -51,25 +51,28 @@ def find_topic(raw_text):
     corpus = [dictionary.doc2bow(text) for text in texts]
     # generate LDA model
     ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=1, id2word = dictionary, passes=20)
-    return(ldamodel.print_topics(num_topics=-1, num_words=10))
+    return(ldamodel.print_topics(num_topics=-1, num_words=5))
     
 
 def main():
 
+        #import xlrd
     os.chdir("/Users/jingshisun/Desktop/KenyaParliamentaryDebates/sentiment")
     df = pd.read_excel("../Cabinet Members and MPs/constituency.xlsx")
     # specify the years 
-    years = {1963, 1964, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 
-            1977, 1978, 1979, 1980, 1981, 1983, 1985, 1987, 1990, 1992, 1996, 
-            1997, 1998, 1999, 2004, 2008, 2013, 2014, 2015}
+    #years = {1963, 1964, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 
+    #        1977, 1978, 1979, 1980, 1981, 1983, 1985, 1987, 1990, 1992, 1996, 
+    #        1997, 1998, 1999, 2004, 2008, 2013, 2014, 2015}
     
-    #years = {1963}
+    years = {1992}
     
     
     for year in years:
+        query_string = 'year ==' + str(year)
+        cur_df = df.query(query_string)
         
-        #with open('constituency_topic.txt', 'a') as outfile:
-        #     outfile.write('\n\n'+str(year)+': ')
+        with open('constituency_topic.txt', 'a') as outfile:
+             outfile.write('\n\n')
             
         # a string to record all words
         wordstring =''
@@ -84,7 +87,7 @@ def main():
     
         wordstring = wordstring.lower()
         
-        for i in df['constituency'].unique():
+        for i in cur_df['constituency'].unique():
             regex = re.compile("([^.]*?" + i.lower() + "[^.]*\.)")
             sentences = regex.findall(wordstring)
             
@@ -104,3 +107,9 @@ def main():
 if __name__ == "__main__":
     
     main()
+    
+    
+#    os.chdir("/Users/jingshisun/Desktop/KenyaParliamentaryDebates/sentiment")
+#    df = pd.read_excel("../Cabinet Members and MPs/constituency.xlsx")
+#    df2 = df.query('year == 1963')
+#    df2
